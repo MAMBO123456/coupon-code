@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupon Code Validation</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="logo" style="height: 50px; margin-top: 15px; margin-right: 100px;">
+
+    <div class="right">
+        <h1>Apply Coupon Code</h1>
+        <input type="text" id="couponCode" placeholder="Enter coupon code">
+        <button onclick="validateCoupon()">Validate</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function validateCoupon() {
+            var couponCode = document.getElementById("couponCode").value;
+            var currentDateEpoch = Math.floor(Date.now() / 1000); 
+            var validCouponCode = "XYZ123";
+            var startOfDayEpoch = 1722307200; 
+            var endOfDayEpoch = 1722393599;   
+
+            if (couponCode.split('-')[0] === validCouponCode &&
+                currentDateEpoch >= startOfDayEpoch && currentDateEpoch <= endOfDayEpoch) {
+                
+                fetch('SECRETS.txt')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById("result").innerText = data;
+                    })
+                    .catch(error => {
+                        document.getElementById("result").innerText = "Error loading flag.";
+                    });
+
+            } else {
+                document.getElementById("result").innerText = "Invalid coupon.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+body {
+    background-color: #ffffff; /* Dark background */
+    color: #000000; /* Light text color */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+a {
+    color: #bb86fc; /* Light purple color for the link */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+a:hover {
+    background-color: #1f1f1f; /* Slightly lighter background on hover */
+    color: #ffffff; /* White color on hover */
+}
+
+h1 {
+    color: #000000;
+    height: 40px;
+    margin: 0px;
+    margin-right: 60px;
+}
+
+#couponCode {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #000000;
+    background-color: #f7ca00;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffff00;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.right{
+    display: flex;
+    height: 40px;
+    width: 800px;
+    /* padding-bottom: 50px; */
+
+
+}
